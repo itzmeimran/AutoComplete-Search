@@ -1,0 +1,13 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+#item {
+  cursor: pointer;
+  padding: 8px 4px;
+}
+
+#item:hover {
+  background-color: lightgray;
+}
