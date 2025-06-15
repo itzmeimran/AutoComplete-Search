@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import "./styles.css";
-
+import HighLightText from "./HighLightText";
 export default function App() {
   const [input, setInput] = useState("");
   const url = `https://dummyjson.com/recipes/search?q=${input}`;
   const [data, setData] = useState([]);
   const [open, setOpen] = useState(false);
   const [cache, setCache] = useState({});
+
   async function fetchData() {
     try {
       const response = await fetch(url);
@@ -52,7 +53,7 @@ export default function App() {
                   setInput(item.name);
                 }}
               >
-                {item.name}
+                {<HighLightText str={item.name} subStr={input} />}
               </p>
             ))}
           </div>
